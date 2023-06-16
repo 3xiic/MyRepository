@@ -1,0 +1,113 @@
+body {
+	background-color: #efecff;
+}
+
+.centrar {
+	witdh: 150px;
+	height: 390px;
+	 padding: 40px;
+	background-color: #ffffff;
+	 position: absolute;
+	top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+input[type="button"] {
+	border: 0;
+	background: #ffffff;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #000000;
+	padding: 14px 40px;
+	outline: none;
+	color: #000000;
+	border-radius: 10px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+input[type="button"]:hover {
+	background: #efecff;
+	border: 3px solid #000000;
+}
+
+* {
+	font-family: Century Gothic;
+}
+
+p {
+	font-family: Century Gothic;
+}
+
+button {
+	outline: 0;
+}
+
+button.active {
+	outline: 0;
+}
+
+button.send {
+	border: 2px solid #fff;
+	color: white;
+	border-radius: 50px;
+	padding: 15px 80px;
+	background: transparent;
+	position: relative;
+	overflow: hidden;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+button.send .text.active {
+	-webkit-transform: translateY(-350%) scale(0);
+	transform: translateY(-350%) scale(0);
+	-webkit-transition: 0.35s cubic-bezier(0.34, -0.61, 1, 0.64);
+	transition: 0.35s cubic-bezier(0.34, -0.61, 1, 0.64);
+}
+
+button.send.active {
+	padding: 0px 80px;
+	-webkit-transition: 0.4s cubic-bezier(0.35, -0.77, 0.67, 1.88);
+	transition: 0.4s cubic-bezier(0.35, -0.77, 0.67, 1.88);
+}
+
+button.send .loader {
+	position: absolute;
+	width: calc(0% - 4px);
+	height: calc(100% - 4px);
+	background-color: #fff;
+	left: 2px;
+	top: 2px;
+	border-radius: 50px;
+}
+
+button.send .loader.active {
+	width: calc(100% - 4px);
+	-webkit-transition: 1.3s ease-in-out;
+	transition: 1.3s ease-in-out;
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+
+button.send .done {
+	color: #333ddd;
+	margin-top: -20px;
+	-webkit-transform: translateY(300%) scale(0);
+	transform: translateY(300%) scale(0);
+}
+
+button.send .done.active {
+	-webkit-transform: translateY(0%) scale(1);
+	transform: translateY(0%) scale(1);
+	-webkit-transition: 0.4s cubic-bezier(0.34, -0.61, 1, 0.64);
+	transition: 0.4s cubic-bezier(0.34, -0.61, 1, 0.64);
+}
+
+button.send.finished {
+	padding: 15px 80px;
+	-webkit-transition: 0.4s cubic-bezier(0.35, -0.77, 0.67, 1.88);
+	transition: 0.4s cubic-bezier(0.35, -0.77, 0.67, 1.88);
+}

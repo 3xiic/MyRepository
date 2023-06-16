@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Inicio</title>
+	<center>  <h1>TU COMPRA</h1>  </center>
+</h:head>
+<h:body>
+	<h:form>
+		<center>
+			<p:panelGrid>
+				<p:row> <p:column> <center> Selecciona tu articulo </center><h:selectOneMenu value="#{productBean.article}" id="article" a:placeHolder="Articulo"> 
+				<f:selectItem  itemValue="Zapatos"  itemLabel = "Zapatos"/>
+				<f:selectItem  itemValue="Camisa"  itemLabel = "Camisa"/>
+				<f:selectItem  itemValue="Reloj"  itemLabel = "Reloj"/>
+				<f:selectItem  itemValue="Libro"  itemLabel = "Libro"/>
+				<f:selectItem  itemValue="Computador"  itemLabel = "Computador"/>
+				</h:selectOneMenu> </p:column></p:row>
+				<p:row> <p:column> Cantidad <p:inputNumber id = "quantity" value="#{productBean.quantity}"  a:placeHolder="Cantidad"  minvalue = "1"/></p:column> </p:row>
+				<p:row> <p:column> Valor <p:inputNumber value="#{productBean.value}" id="value" a:placeHolder="Valor por unidad" /></p:column> </p:row>
+				<p:row> <p:column> Nombre<h:inputText value="#{productBean.name}" id="name" a:placeHolder="Nombre" /> </p:column></p:row>
+				<p:row> <p:column>Apellido<h:inputText value="#{productBean.lastname}" id="lastname" a:placeHolder="Apellido" /> </p:column></p:row>
+				<p:row> <p:column> <center> Tarjeta de credito </center><h:selectOneRadio value="#{productBean.cardType}" id="cardType" >	
+				<f:selectItem  itemValue="Visa"  itemLabel = "Visa"/>
+				<f:selectItem  itemValue="MasterCard"  itemLabel = "MasterCard"/>
+				<f:selectItem  itemValue="American Express"  itemLabel = "American Express"/>
+				</h:selectOneRadio></p:column> </p:row>
+				<p:row><p:column>Numero de tarjeta <h:inputText value="#{productBean.cardNumber}" id="cardNumber" a:placeHolder="Numero de tarjeta" /> </p:column></p:row>
+				<p:row> <p:column>Confirme su numero<h:inputText value="#{productBean.cardNumberC}" id="cardNumberC" a:placeHolder="Cofirme su numero de tarjeta" /></p:column> </p:row>
+			</p:panelGrid>
+			<h:commandButton value = "send" action = "recibo" />
+		</center>
+	</h:form>
+</h:body>
+</html>
